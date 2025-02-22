@@ -4,63 +4,599 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Business Pitch Generator</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4338ca;
+            --primary-dark: #312e81;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --background: #f3f4f6;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --white: #ffffff;
+            --gradient-start: #4f46e5;
+            --gradient-end: #7c3aed;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.5;
+        }
+
+        /* Header & Navigation */
+        .header {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: var(--white);
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        .nav {
+            background: var(--white);
+            padding: 1rem;
+            box-shadow: var(--shadow-md);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Form Styles */
+        .form-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 2rem;
+        }
+
+        .form-title {
+            font-size: 1.875rem;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            background: var(--white);
+            color: var(--text);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(67, 56, 202, 0.1);
+        }
+
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .btn-block {
+            width: 100%;
+        }
+
+        /* Subscription Banner */
+        .subscription-banner {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .subscription-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .subscription-text {
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .btn-subscribe {
+            background: var(--white);
+            color: var(--primary);
+            font-weight: 600;
+            padding: 1rem 2rem;
+        }
+
+        .btn-subscribe:hover {
+            background: var(--background);
+            transform: translateY(-2px);
+        }
+
+        /* Result Section */
+        .result-section {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-lg);
+            margin-top: 2rem;
+            display: none;
+        }
+
+        .result-content {
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: var(--background);
+            border-radius: 0.5rem;
+        }
+
+        .result-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+            margin-top: 1.5rem;
+        }
+
+        /* Alert Styles */
+        .alert {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            background: #fee2e2;
+            color: #991b1b;
+            display: none;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: var(--shadow-md);
+            z-index: 1000;
+        }
+
+        .alert-icon {
+            font-size: 1.25rem;
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .animate-slide-in {
+            animation: slideIn 0.3s ease-out;
+        }
+
+        /* Loading State */
+        .loading {
+            position: relative;
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .loading::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 1.5rem;
+            height: 1.5rem;
+            border: 3px solid var(--background);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .subscription-banner {
+                padding: 1.5rem;
+            }
+
+            .btn {
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+
+            .result-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="nav-brand">
+                <i class="fas fa-robot"></i> PitchCraft AI
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                <li><a href="{{ url_for('payment') }}" class="nav-link btn btn-primary">Subscribe</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
         <h1>AI Business Pitch Generator</h1>
-        <p class="intro">Transform your business idea into a compelling pitch with the power of AI. 
-            Our advanced algorithm crafts tailored, professional pitches to help you 
-            stand out in the competitive business landscape.</p>
-        
-        <div class="card">
+        <p>Transform your business idea into a compelling pitch with the power of AI</p>
+    </header>
+
+    <div class="container">
+        <!-- Subscription Banner -->
+        <div class="subscription-banner">
+            <h2 class="subscription-title">Unlock Premium Features</h2>
+            <p class="subscription-text">
+                Get access to advanced analytics, unlimited pitches, and professional templates.
+            </p>
+            <a href="{{ url_for('payment') }}" class="btn btn-subscribe">
+                Start Your Free Trial
+            </a>
+        </div>
+
+        <!-- Form Card -->
+        <div class="form-card">
+            <h2 class="form-title">Generate Your Pitch</h2>
             <form id="pitchForm">
-                <div class="form-group">
-                    <label for="businessName">Business Name</label>
-                    <input type="text" id="businessName" name="businessName" required>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label" for="businessName">Business Name</label>
+                        <input type="text" id="businessName" name="businessName" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="industry">Industry</label>
+                        <select id="industry" name="industry" class="form-select" required>
+                            <option value="">Select an industry</option>
+                            <option value="Tech">Technology</option>
+                            <option value="Health">Healthcare</option>
+                            <option value="Finance">Finance</option>
+                            <option value="Education">Education</option>
+                            <option value="Retail">Retail</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
                 </div>
+
                 <div class="form-group">
-                    <label for="industry">Industry</label>
-                    <select id="industry" name="industry" required>
-                        <option value="">Select an industry</option>
-                        <option value="Tech">Tech</option>
-                        <option value="Health">Health</option>
-                        <option value="Finance">Finance</option>
-                        <option value="Education">Education</option>
-                        <option value="Retail">Retail</option>
-                        <option value="Other">Other</option>
-                    </select>
+                    <label class="form-label" for="problemStatement">Problem Statement</label>
+                    <textarea id="problemStatement" name="problemStatement" class="form-textarea" required></textarea>
                 </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label" for="targetMarket">Target Market</label>
+                        <input type="text" id="targetMarket" name="targetMarket" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="revenueModel">Revenue Model</label>
+                        <input type="text" id="revenueModel" name="revenueModel" class="form-input" required>
+                    </div>
+                </div>
+
                 <div class="form-group">
-                    <label for="problemStatement">Problem Statement</label>
-                    <textarea id="problemStatement" name="problemStatement" required></textarea>
+                    <label class="form-label" for="competitorAnalysis">Competitor Analysis (Optional)</label>
+                    <textarea id="competitorAnalysis" name="competitorAnalysis" class="form-textarea"></textarea>
                 </div>
-                <div class="form-group">
-                    <label for="targetMarket">Target Market</label>
-                    <input type="text" id="targetMarket" name="targetMarket" required>
-                </div>
-                <div class="form-group">
-                    <label for="revenueModel">Revenue Model</label>
-                    <input type="text" id="revenueModel" name="revenueModel" required>
-                </div>
-                <div class="form-group">
-                    <label for="competitorAnalysis">Competitor Analysis (Optional)</label>
-                    <textarea id="competitorAnalysis" name="competitorAnalysis"></textarea>
-                </div>
-                <button type="submit" id="generateButton">Generate Pitch</button>
+
+                <button type="submit" id="generateButton" class="btn btn-primary btn-block">
+                    <i class="fas fa-wand-magic-sparkles"></i>
+                    Generate Pitch
+                </button>
             </form>
         </div>
 
-        <div id="errorAlert" class="alert error" style="display: none;">
-            <strong>Error:</strong> <span id="errorMessage"></span>
+        <!-- Result Section -->
+        <div id="pitchResult" class="result-section">
+            <h2 class="form-title">Generated Pitch</h2>
+            <div id="pitchContent" class="result-content"></div>
+            <div class="result-actions">
+                <button class="btn btn-primary" id="downloadBtn">
+                    <i class="fas fa-download"></i> Download PDF
+                </button>
+                <button class="btn btn-primary" id="shareBtn">
+                    <i class="fas fa-share-alt"></i> Share
+                </button>
+            </div>
         </div>
 
-        <div id="pitchResult" class="card" style="display: none;">
-            <h2>Generated Pitch</h2>
-            <div id="pitchContent"></div>
+        <!-- Error Alert -->
+        <div id="errorAlert" class="alert">
+            <i class="fas fa-exclamation-circle alert-icon"></i>
+            <span id="errorMessage"></span>
         </div>
     </div>
 
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+        // Form submission handling
+        document.getElementById('pitchForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const button = document.getElementById('generateButton');
+            const resultSection = document.getElementById('pitchResult');
+            
+            try {
+                // Add loading state
+                button.classList.add('loading');
+                
+                // Collect form data
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData.entries());
+                
+                // Make API request
+                const response = await fetch('/generate-pitch', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+                
+                if (response.ok) {
+                    // Show result
+                    document.getElementById('pitchContent').innerHTML = result.pitch;
+                    resultSection.style.display = 'block';
+                    resultSection.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    throw new Error(result.error || 'Failed to generate pitch');
+                }
+            } catch (error) {
+                // Show error alert
+                const errorAlert = document.getElementById('errorAlert');
+                document.getElementById('errorMessage').textContent = error.message;
+                errorAlert.style.display = 'flex';
+                errorAlert.classList.add('animate-slide-in');
+                
+                setTimeout(() => {
+                    errorAlert.style.display = 'none';
+                }, 5000);
+            } finally {
+                // Remove loading state
+                button.classList.remove('loading');
+            }
+        });
+
+        // Download button handling
+        document.getElementById('downloadBtn').addEventListener('click', async function() {
+            try {
+                const response = await fetch('/download-pdf');
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'business-pitch.pdf';
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+            } catch (error) {
+                console.error('Error downloading PDF:', error);
+            }
+        });
+
+        // Share button handling
+        document.getElementById('shareBtn').addEventListener('click', async function() {
+            const pitchContent = document.getElementById('pitchContent').textContent;
+            
+            if (navigator.share) {
+                try {
+                    await navigator.share({
+                        title: 'Business Pitch',
+                        text: pitchContent
+                    });
+                } catch (error) {
+                    console.error('Error sharing:', error);
+                }
+            } else {
+                // Fallback copy to clipboard
+                navigator.clipboard.writeText(pitchContent).then(() => {
+                    alert('Pitch copied to clipboard!');
+                }).catch(err => {
+                    console.error('Error copying to clipboard:', err);
+                });
+            }
+        });
+
+        // Form input animations
+        const formInputs = document.querySelectorAll('.form-input, .form-select, .form-textarea');
+        formInputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.classList.add('input-focused');
+            });
+            
+            input.addEventListener('blur', () => {
+                input.parentElement.classList.remove('input-focused');
+            });
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.createElement('button');
+        mobileMenuBtn.className = 'mobile-menu-btn';
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        document.querySelector('.nav-container').appendChild(mobileMenuBtn);
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('show');
+        });
+
+        // Add responsive styles for mobile menu
+        const style = document.createElement('style');
+        style.textContent = `
+            @media (max-width: 768px) {
+                .mobile-menu-btn {
+                    display: block;
+                    background: none;
+                    border: none;
+                    color: var(--text);
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                }
+
+                .nav-menu {
+                    display: none;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    right: 0;
+                    background: var(--white);
+                    padding: 1rem;
+                    box-shadow: var(--shadow-md);
+                }
+
+                .nav-menu.show {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                }
+
+                .nav-menu li {
+                    width: 100%;
+                }
+
+                .nav-menu .btn {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
 </body>
 </html>

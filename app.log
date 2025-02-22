@@ -1,0 +1,106 @@
+2025-02-22 13:35:01,786 - __main__ - INFO - Database initialized successfully
+2025-02-22 13:35:01,929 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-22 13:35:01,942 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-02-22 13:35:01,950 - werkzeug - INFO -  * Restarting with stat
+2025-02-22 13:35:07,738 - __main__ - INFO - Database initialized successfully
+2025-02-22 13:35:07,856 - werkzeug - WARNING -  * Debugger is active!
+2025-02-22 13:35:07,864 - werkzeug - INFO -  * Debugger PIN: 131-375-361
+2025-02-22 13:35:14,977 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:35:14] "GET / HTTP/1.1" 200 -
+2025-02-22 13:35:15,073 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:35:15] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-02-22 13:35:15,105 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:35:15] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-02-22 13:35:23,604 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:35:23] "GET /payment HTTP/1.1" 200 -
+2025-02-22 13:36:45,343 - __main__ - ERROR - Error in generate_pitch: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-02-22 13:36:45,347 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:36:45] "[35m[1mPOST /generate-pitch HTTP/1.1[0m" 500 -
+2025-02-22 13:37:10,734 - werkzeug - INFO -  * Detected change in 'C:\\Users\\kim\\OneDrive\\Documentos\\DEV-OPS\\hackathon 2\\aipitch\\app.py', reloading
+2025-02-22 13:37:13,210 - werkzeug - INFO -  * Restarting with stat
+2025-02-22 13:37:20,121 - __main__ - INFO - Database initialized successfully
+2025-02-22 13:37:20,217 - werkzeug - WARNING -  * Debugger is active!
+2025-02-22 13:37:20,228 - werkzeug - INFO -  * Debugger PIN: 131-375-361
+2025-02-22 13:37:33,978 - werkzeug - INFO -  * Detected change in 'C:\\Users\\kim\\OneDrive\\Documentos\\DEV-OPS\\hackathon 2\\aipitch\\app.py', reloading
+2025-02-22 13:37:34,483 - werkzeug - INFO -  * Restarting with stat
+2025-02-22 13:37:41,129 - __main__ - INFO - Database initialized successfully
+2025-02-22 13:37:41,228 - werkzeug - WARNING -  * Debugger is active!
+2025-02-22 13:37:41,239 - werkzeug - INFO -  * Debugger PIN: 131-375-361
+2025-02-22 13:38:00,155 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:38:00] "POST /generate-pitch HTTP/1.1" 200 -
+2025-02-22 13:38:10,352 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:38:10] "GET / HTTP/1.1" 200 -
+2025-02-22 13:38:10,430 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:38:10] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-02-22 13:38:10,436 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:38:10] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-02-22 13:38:14,216 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:38:14] "GET /payment HTTP/1.1" 200 -
+2025-02-22 13:40:38,871 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:40:38] "GET / HTTP/1.1" 200 -
+2025-02-22 13:40:38,946 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:40:38] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-02-22 13:40:38,961 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:40:38] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-02-22 13:40:40,381 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:40:40] "GET / HTTP/1.1" 200 -
+2025-02-22 13:40:40,468 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:40:40] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-02-22 13:40:40,471 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:40:40] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-02-22 13:40:45,351 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:40:45] "GET /payment HTTP/1.1" 200 -
+2025-02-22 13:42:58,391 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:42:58] "GET / HTTP/1.1" 200 -
+2025-02-22 13:42:58,464 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:42:58] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-02-22 13:42:58,478 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:42:58] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-02-22 13:43:10,035 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:43:10] "GET /payment HTTP/1.1" 200 -
+2025-02-22 13:43:28,597 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): sandbox.safaricom.co.ke:443
+2025-02-22 13:43:29,470 - urllib3.connectionpool - DEBUG - https://sandbox.safaricom.co.ke:443 "GET /oauth/v1/generate?grant_type=client_credentials HTTP/1.1" 400 0
+2025-02-22 13:43:29,474 - __main__ - ERROR - Token generation error: Expecting value: line 1 column 1 (char 0)
+2025-02-22 13:43:29,479 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:43:29] "[35m[1mPOST /stk_push HTTP/1.1[0m" 500 -
+2025-02-22 13:44:32,149 - werkzeug - INFO -  * Detected change in 'C:\\Users\\kim\\OneDrive\\Documentos\\DEV-OPS\\hackathon 2\\aipitch\\app.py', reloading
+2025-02-22 13:44:35,067 - werkzeug - INFO -  * Restarting with stat
+2025-02-22 13:44:41,705 - __main__ - INFO - Database initialized successfully
+2025-02-22 13:44:41,836 - werkzeug - WARNING -  * Debugger is active!
+2025-02-22 13:44:41,854 - werkzeug - INFO -  * Debugger PIN: 131-375-361
+2025-02-22 13:44:58,138 - werkzeug - INFO -  * Detected change in 'C:\\Users\\kim\\OneDrive\\Documentos\\DEV-OPS\\hackathon 2\\aipitch\\app.py', reloading
+2025-02-22 13:44:59,589 - werkzeug - INFO -  * Restarting with stat
+2025-02-22 13:45:06,420 - __main__ - INFO - Database initialized successfully
+2025-02-22 13:45:06,556 - werkzeug - WARNING -  * Debugger is active!
+2025-02-22 13:45:06,562 - werkzeug - INFO -  * Debugger PIN: 131-375-361
+2025-02-22 13:45:16,035 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:45:16] "GET /payment HTTP/1.1" 200 -
+2025-02-22 13:45:21,967 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): sandbox.safaricom.co.ke:443
+2025-02-22 13:45:22,736 - urllib3.connectionpool - DEBUG - https://sandbox.safaricom.co.ke:443 "GET /oauth/v1/generate?grant_type=client_credentials HTTP/1.1" 200 None
+2025-02-22 13:45:22,752 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): sandbox.safaricom.co.ke:443
+2025-02-22 13:45:24,264 - urllib3.connectionpool - DEBUG - https://sandbox.safaricom.co.ke:443 "POST /mpesa/stkpush/v1/processrequest HTTP/1.1" 200 None
+2025-02-22 13:45:24,272 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:45:24] "POST /stk_push HTTP/1.1" 200 -
+2025-02-22 13:45:29,306 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:45:29] "[33mPOST /check_payment_status HTTP/1.1[0m" 404 -
+2025-02-22 13:45:34,306 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:45:34] "[33mPOST /check_payment_status HTTP/1.1[0m" 404 -
+2025-02-22 13:45:39,899 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:45:39] "[33mPOST /check_payment_status HTTP/1.1[0m" 404 -
+2025-02-22 13:45:44,821 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:45:44] "[33mPOST /check_payment_status HTTP/1.1[0m" 404 -
+2025-02-22 13:45:50,048 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:45:50] "[33mPOST /check_payment_status HTTP/1.1[0m" 404 -
+2025-02-22 13:45:54,897 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:45:54] "[33mPOST /check_payment_status HTTP/1.1[0m" 404 -
+2025-02-22 13:45:59,900 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:45:59] "[33mPOST /check_payment_status HTTP/1.1[0m" 404 -
+2025-02-22 13:46:04,914 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:46:04] "[33mPOST /check_payment_status HTTP/1.1[0m" 404 -
+2025-02-22 13:46:09,916 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:46:09] "[33mPOST /check_payment_status HTTP/1.1[0m" 404 -
+2025-02-22 13:46:14,898 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:46:14] "[33mPOST /check_payment_status HTTP/1.1[0m" 404 -
+2025-02-22 13:46:19,906 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:46:19] "[33mPOST /check_payment_status HTTP/1.1[0m" 404 -
+2025-02-22 13:46:24,902 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:46:24] "[33mPOST /check_payment_status HTTP/1.1[0m" 404 -
+2025-02-22 13:46:29,904 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:46:29] "[33mPOST /check_payment_status HTTP/1.1[0m" 404 -
+2025-02-22 13:46:34,902 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:46:34] "[33mPOST /check_payment_status HTTP/1.1[0m" 404 -
+2025-02-22 13:46:39,905 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:46:39] "[33mPOST /check_payment_status HTTP/1.1[0m" 404 -
+2025-02-22 13:46:44,907 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:46:44] "[33mPOST /check_payment_status HTTP/1.1[0m" 404 -
+2025-02-22 13:46:53,307 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:46:53] "[33mPOST /check_payment_status HTTP/1.1[0m" 404 -
+2025-02-22 13:46:54,315 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:46:54] "[33mPOST /check_payment_status HTTP/1.1[0m" 404 -
+2025-02-22 13:46:59,315 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:46:59] "[33mPOST /check_payment_status HTTP/1.1[0m" 404 -
+2025-02-22 13:47:03,092 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:47:03] "GET / HTTP/1.1" 200 -
+2025-02-22 13:49:50,507 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:49:50] "GET / HTTP/1.1" 200 -
+2025-02-22 13:49:50,575 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:49:50] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+2025-02-22 13:49:50,577 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:49:50] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2025-02-22 13:50:00,362 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:50:00] "GET / HTTP/1.1" 200 -
+2025-02-22 13:50:35,294 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:50:35] "POST /generate-pitch HTTP/1.1" 200 -
+2025-02-22 13:50:43,931 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:50:43] "[33mGET /download-pdf HTTP/1.1[0m" 404 -
+2025-02-22 13:55:14,013 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:55:14] "GET / HTTP/1.1" 200 -
+2025-02-22 13:55:14,137 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:55:14] "[33mGET /api/placeholder/1200/400 HTTP/1.1[0m" 404 -
+2025-02-22 13:55:30,145 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:55:30] "GET /payment HTTP/1.1" 200 -
+2025-02-22 13:57:53,415 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:57:53] "GET / HTTP/1.1" 200 -
+2025-02-22 13:58:21,261 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:58:21] "POST /generate-pitch HTTP/1.1" 200 -
+2025-02-22 13:59:14,631 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:59:14] "GET / HTTP/1.1" 200 -
+2025-02-22 13:59:14,723 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 13:59:14] "[33mGET /api/placeholder/1200/400 HTTP/1.1[0m" 404 -
+2025-02-22 14:00:48,366 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 14:00:48] "GET / HTTP/1.1" 200 -
+2025-02-22 14:00:56,086 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 14:00:56] "GET / HTTP/1.1" 200 -
+2025-02-22 14:00:56,167 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 14:00:56] "[33mGET /api/placeholder/1200/400 HTTP/1.1[0m" 404 -
+2025-02-22 14:01:51,082 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 14:01:51] "GET / HTTP/1.1" 200 -
+2025-02-22 14:02:27,718 - werkzeug - INFO - 127.0.0.1 - - [22/Feb/2025 14:02:27] "POST /generate-pitch HTTP/1.1" 200 -
